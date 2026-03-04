@@ -12,8 +12,8 @@
   --color-border: #d4d0c8;
   --color-white: #ffffff;
 
-  --font-heading: "Cormorant Garamond", "Times New Roman", serif;
-  --font-body: Georgia, "Times New Roman", serif;
+  --font-heading: "IBM Plex Mono", monospace;
+  --font-body: "IBM Plex Mono", monospace;
 }
 
 /* Base resets and typography */
@@ -46,7 +46,7 @@
   }
 
   .font-sans {
-    font-family: "Inter", system-ui, sans-serif;
+    font-family: "IBM Plex Mono", monospace;
   }
 }
 

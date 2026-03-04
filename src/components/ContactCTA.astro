@@ -10,13 +10,13 @@ const collectionValueOptions = [
 
 <section
   id="contact"
-  class="py-[72px] md:py-[120px] px-6 md:px-8 bg-[var(--color-accent)]"
+  class="py-[72px] md:py-[120px] px-6 md:px-8 bg-[var(--color-black)]"
   aria-labelledby="contact-heading"
   data-animate
 >
   <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-12 md:gap-16 items-start">
     <div class="flex-1 max-w-[420px]">
-      <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-4 font-sans">
+      <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-white/80 mb-4 font-sans">
         Private Inquiry
       </p>
       <h2
@@ -52,7 +52,7 @@ const collectionValueOptions = [
           </p>
 
           <div>
-            <label for="name" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2 font-sans">
+            <label for="name" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2 font-sans">
               Full Name
             </label>
             <input
@@ -61,11 +61,11 @@ const collectionValueOptions = [
               name="name"
               required
               placeholder="Your full name"
-              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-gold)]"
+              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-black)]"
             />
           </div>
           <div>
-            <label for="email" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2 font-sans">
+            <label for="email" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2 font-sans">
               Email Address
             </label>
             <input
@@ -74,11 +74,11 @@ const collectionValueOptions = [
               name="email"
               required
               placeholder="your@email.com"
-              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-gold)]"
+              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-black)]"
             />
           </div>
           <div>
-            <label for="phone" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2 font-sans">
+            <label for="phone" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2 font-sans">
               Phone (Optional)
             </label>
             <input
@@ -86,17 +86,17 @@ const collectionValueOptions = [
               id="phone"
               name="phone"
               placeholder="+1 (000) 000-0000"
-              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-gold)]"
+              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-black)]"
             />
           </div>
           <div>
-            <label for="collection-value" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2 font-sans">
+            <label for="collection-value" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2 font-sans">
               Estimated Collection Value
             </label>
             <select
               id="collection-value"
               name="collection-value"
-              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-gold)]"
+              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-black)]"
             >
               <option value="">Select range</option>
               {collectionValueOptions.map((opt) => (
@@ -105,7 +105,7 @@ const collectionValueOptions = [
             </select>
           </div>
           <div>
-            <label for="message" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2 font-sans">
+            <label for="message" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2 font-sans">
               Message / How can we help?
             </label>
             <textarea
@@ -113,12 +113,12 @@ const collectionValueOptions = [
               name="message"
               rows={4}
               placeholder="Tell us about your collection and what you're looking to achieve"
-              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-gold)] resize-y min-h-[100px]"
+              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-black)] resize-y min-h-[100px]"
             ></textarea>
           </div>
           <button
             type="submit"
-            class="w-full py-3.5 px-8 text-white text-[12px] uppercase tracking-[0.12em] font-medium bg-[var(--color-gold)] hover:bg-[var(--color-gold-hover)] border border-[var(--color-gold)] cursor-pointer font-sans"
+            class="w-full py-3.5 px-8 text-white text-[12px] uppercase tracking-[0.12em] font-medium bg-[var(--color-black)] border border-[var(--color-black)] cursor-pointer font-sans hover:opacity-90"
           >
             Submit Inquiry
           </button>

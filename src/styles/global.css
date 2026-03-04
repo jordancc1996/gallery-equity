@@ -1,16 +1,15 @@
 @import "tailwindcss";
 
-/* Gallery Equity design tokens — classic, editorial */
+/* Gallery Equity design tokens — black & white, editorial */
 @theme {
-  --color-bg: #f5f3ee;
-  --color-surface: #ebe8e1;
-  --color-ink: #1c1b18;
-  --color-ink-muted: #5c5a54;
-  --color-accent: #2a2926;
-  --color-gold: #9a8768;
-  --color-gold-hover: #827155;
-  --color-border: #d4d0c8;
+  --color-bg: #ffffff;
+  --color-surface: #f5f5f5;
+  --color-ink: #0a0a0a;
+  --color-ink-muted: #6b6b6b;
+  --color-accent: #0a0a0a;
+  --color-border: #e5e5e5;
   --color-white: #ffffff;
+  --color-black: #0a0a0a;
 
   --font-heading: "IBM Plex Mono", monospace;
   --font-body: "IBM Plex Mono", monospace;

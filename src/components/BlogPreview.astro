@@ -1,27 +1,13 @@
 ---
-const cards = [
-  {
-    image: "https://images.unsplash.com/photo-1578301978018-3005759f48f7?w=800&q=80",
-    category: "Art Finance",
-    title: "The Illiquidity Premium: Why Art Outperforms in Private Markets",
-    date: "March 1, 2025",
-    href: "#",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1499781350541-7783f6c6a0c8?w=800&q=80",
-    category: "Market Insight",
-    title: "Understanding Loan-to-Value in Fine Art Lending",
-    date: "February 15, 2025",
-    href: "#",
-  },
-  {
-    image: "https://images.unsplash.com/photo-1513364776144-60967b0f800f?w=800&q=80",
-    category: "Collection Strategy",
-    title: "How Family Offices Are Rethinking Art as Capital",
-    date: "February 1, 2025",
-    href: "#",
-  },
-];
+import { insights } from "../data/insights";
+
+const cards = insights.map((insight) => ({
+  image: insight.image,
+  category: insight.category,
+  title: insight.title,
+  date: insight.date,
+  href: `/insights/${insight.slug}`,
+}));
 ---
 
 <section
@@ -31,8 +17,8 @@ const cards = [
 >
   <div class="max-w-[1200px] mx-auto">
     <header class="text-center mb-12 md:mb-16" data-animate>
-      <div class="w-12 h-px bg-[var(--color-gold)] mx-auto mb-4"></div>
-      <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2 font-sans">
+      <div class="w-12 h-px bg-[var(--color-black)] mx-auto mb-4"></div>
+      <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2 font-sans">
         From the Desk
       </p>
       <h2
@@ -60,7 +46,7 @@ const cards = [
               loading="lazy"
             />
           </div>
-          <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2 font-sans">
+          <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-ink-muted)] mb-2 font-sans">
             {card.category}
           </p>
           <h3 class="font-heading font-normal text-[22px] text-[var(--color-accent)] mb-2">
@@ -69,7 +55,7 @@ const cards = [
           <p class="text-[13px] text-[var(--color-ink-muted)] mb-3 font-body">
             {card.date}
           </p>
-          <span class="text-[13px] text-[var(--color-gold)] font-body group-hover:underline">
+          <span class="text-[13px] text-[var(--color-black)] font-body group-hover:underline">
             Read more
           </span>
         </a>

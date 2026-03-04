@@ -36,7 +36,7 @@ const collectionValueOptions = [
     </div>
 
     <div class="w-full md:max-w-[440px] flex-shrink-0">
-      <div id="contact-form-wrapper" class="bg-white p-8 md:p-12">
+      <div id="contact-form-wrapper" class="bg-[var(--color-bg)] p-8 md:p-12">
         <form
           name="gallery-equity-inquiry"
           method="POST"
@@ -61,7 +61,7 @@ const collectionValueOptions = [
               name="name"
               required
               placeholder="Your full name"
-              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-black)]"
+              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-[var(--color-bg)] focus:outline-none focus:border-[var(--color-black)]"
             />
           </div>
           <div>
@@ -74,7 +74,7 @@ const collectionValueOptions = [
               name="email"
               required
               placeholder="your@email.com"
-              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-black)]"
+              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-[var(--color-bg)] focus:outline-none focus:border-[var(--color-black)]"
             />
           </div>
           <div>
@@ -86,7 +86,7 @@ const collectionValueOptions = [
               id="phone"
               name="phone"
               placeholder="+1 (000) 000-0000"
-              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-black)]"
+              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-[var(--color-bg)] focus:outline-none focus:border-[var(--color-black)]"
             />
           </div>
           <div>
@@ -96,7 +96,7 @@ const collectionValueOptions = [
             <select
               id="collection-value"
               name="collection-value"
-              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-black)]"
+              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-[var(--color-bg)] focus:outline-none focus:border-[var(--color-black)]"
             >
               <option value="">Select range</option>
               {collectionValueOptions.map((opt) => (
@@ -113,7 +113,7 @@ const collectionValueOptions = [
               name="message"
               rows={4}
               placeholder="Tell us about your collection and what you're looking to achieve"
-              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-black)] resize-y min-h-[100px]"
+              class="w-full py-3.5 px-4 font-body text-[15px] border border-[var(--color-border)] bg-[var(--color-bg)] focus:outline-none focus:border-[var(--color-black)] resize-y min-h-[100px]"
             ></textarea>
           </div>
           <button

@@ -1,9 +1,9 @@
 ---
 const navLinks = [
-  { href: '#about', label: 'About' },
-  { href: '#how-it-works', label: 'How It Works' },
-  { href: '#insights', label: 'Insights' },
-  { href: '#faq', label: 'FAQ' },
+  { href: '/#about', label: 'About', title: 'Learn about Gallery Equity and art finance solutions' },
+  { href: '/#how-it-works', label: 'How It Works', title: 'How Gallery Equity art equity and financing works' },
+  { href: '/#insights', label: 'Insights', title: 'Insights on art and capital from Gallery Equity' },
+  { href: '/#faq', label: 'FAQ', title: 'Frequently asked questions about art equity financing' },
 ];
 ---
 
@@ -13,8 +13,9 @@ const navLinks = [
   aria-label="Main navigation"
 >
   <a
-    href="#"
-    class="font-heading font-semibold text-[22px] text-[var(--color-accent)] no-underline nav-wordmark"
+    href="/"
+    title="Gallery Equity — Art Finance & Equity Solutions for Collectors"
+    class="font-sans font-semibold text-[20px] md:text-[22px] tracking-[0.02em] text-[var(--color-accent)] no-underline nav-wordmark"
   >
     Gallery Equity
   </a>
@@ -24,7 +25,8 @@ const navLinks = [
       <li>
         <a
           href={link.href}
-          class="nav-link text-xs uppercase tracking-[0.1em] font-semibold text-[var(--color-accent)] no-underline hover:opacity-70 font-sans"
+          title={link.title}
+          class="nav-link text-sm uppercase tracking-[0.1em] font-semibold text-[var(--color-ink-muted)] no-underline hover:text-[var(--color-gold)] font-sans pb-0.5 border-b-2 border-transparent hover:border-[var(--color-gold)] transition-colors duration-200"
         >
           {link.label}
         </a>
@@ -34,8 +36,9 @@ const navLinks = [
 
   <div class="flex items-center gap-4">
     <a
-      href="#contact"
-      class="nav-cta hidden md:inline-block py-3 px-6 text-white text-[12px] uppercase tracking-[0.12em] font-semibold no-underline bg-[var(--color-black)] hover:opacity-90 font-sans border border-[var(--color-black)]"
+      href="/#contact"
+      title="Request access to Gallery Equity art finance solutions"
+      class="nav-cta hidden md:inline-block py-3 px-6 text-white text-[12px] uppercase tracking-[0.12em] font-semibold no-underline bg-[var(--color-gold)] hover:bg-[var(--color-gold-hover)] font-sans border border-[var(--color-gold)]"
     >
       Request Access
     </a>
@@ -56,7 +59,7 @@ const navLinks = [
 <!-- Mobile overlay menu -->
 <div
   id="nav-overlay"
-  class="fixed inset-0 z-40 bg-[var(--color-black)] opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center"
+  class="fixed inset-0 z-40 bg-[var(--color-accent)] opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center"
   aria-hidden="true"
 >
   <ul class="flex flex-col items-center gap-8 list-none m-0 p-0">
@@ -64,6 +67,7 @@ const navLinks = [
       <li>
         <a
           href={link.href}
+          title={link.title}
           class="nav-overlay-link font-heading text-4xl text-white no-underline"
           data-close-overlay
         >
@@ -73,7 +77,8 @@ const navLinks = [
     ))}
     <li>
       <a
-        href="#contact"
+        href="/#contact"
+        title="Request access to Gallery Equity"
         class="nav-overlay-link font-heading text-4xl text-white no-underline"
         data-close-overlay
       >

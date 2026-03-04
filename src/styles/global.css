@@ -1,19 +1,19 @@
 @import "tailwindcss";
 
-/* Gallery Equity design tokens */
+/* Gallery Equity design tokens — classic, editorial */
 @theme {
-  --color-bg: #fafaf8;
-  --color-surface: #f3f2ee;
-  --color-ink: #1a1916;
-  --color-ink-muted: #6b6860;
-  --color-accent: #2c2c27;
-  --color-gold: #b89b6e;
-  --color-gold-hover: #a08555;
-  --color-border: #e2e0db;
+  --color-bg: #f5f3ee;
+  --color-surface: #ebe8e1;
+  --color-ink: #1c1b18;
+  --color-ink-muted: #5c5a54;
+  --color-accent: #2a2926;
+  --color-gold: #9a8768;
+  --color-gold-hover: #827155;
+  --color-border: #d4d0c8;
   --color-white: #ffffff;
 
-  --font-heading: "Cormorant Garamond", serif;
-  --font-body: "Inter", sans-serif;
+  --font-heading: "Cormorant Garamond", "Times New Roman", serif;
+  --font-body: Georgia, "Times New Roman", serif;
 }
 
 /* Base resets and typography */
@@ -24,33 +24,40 @@
 
   body {
     font-family: var(--font-body);
-    font-weight: 300;
-    font-size: 16px;
-    line-height: 1.7;
+    font-weight: 400;
+    font-size: 17px;
+    line-height: 1.65;
     color: var(--color-ink);
     background-color: var(--color-bg);
+    letter-spacing: 0.01em;
   }
 
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  color: var(--color-accent);
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    color: var(--color-accent);
+  }
+
+  .font-heading {
+    font-family: var(--font-heading);
+  }
+
+  .font-body {
+    font-family: var(--font-body);
+  }
+
+  .font-sans {
+    font-family: "Inter", system-ui, sans-serif;
+  }
 }
 
-.font-heading {
-  font-family: var(--font-heading);
-}
-}
-
-/* Animation utilities for scroll-triggered fade-in */
+/* Subtle scroll-in: opacity only, no slide (classic feel) */
 [data-animate] {
   opacity: 0;
-  transform: translateY(20px);
-  transition: opacity 600ms ease, transform 600ms ease;
+  transition: opacity 800ms ease;
 }
 
 [data-animate].animate-in {
   opacity: 1;
-  transform: translateY(0);
 }
 
 /* FAQ accordion content transition */

@@ -42,7 +42,7 @@ const faqItems = [
 >
   <div class="max-w-[800px] mx-auto" data-animate>
     <div class="w-12 h-px bg-[var(--color-gold)] mb-4"></div>
-    <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2">
+    <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2 font-sans">
       Common Questions
     </p>
     <h2
@@ -51,30 +51,30 @@ const faqItems = [
     >
       Everything You Need to Know
     </h2>
-    <p class="text-[var(--color-ink-muted)] text-base font-light mb-12 max-w-[680px]">
+    <p class="font-body text-[var(--color-ink-muted)] text-[17px] mb-12 max-w-[680px]">
       Answers to the questions we hear most often from collectors exploring art-backed solutions.
     </p>
 
     <div class="border-t border-[var(--color-border)]">
       {faqItems.map((item, i) => (
         <details
-          class="faq-item border-b border-[var(--color-border)] group"
+          class="faq-item border-b border-[var(--color-border)]"
           data-faq-details
         >
-          <summary class="list-none cursor-pointer py-6 flex items-start justify-between gap-4">
-            <span class="font-heading font-normal text-[19px] md:text-[22px] text-[var(--color-accent)] pr-8">
+          <summary class="list-none cursor-pointer py-5 flex items-start justify-between gap-4">
+            <span class="font-heading font-normal text-[18px] md:text-[20px] text-[var(--color-accent)] pr-6">
               {item.q}
             </span>
             <span
-              class="faq-toggle flex-shrink-0 text-[20px] text-[var(--color-gold)] w-6 h-6 flex items-center justify-center"
+              class="faq-toggle flex-shrink-0 text-[18px] text-[var(--color-gold)] w-5 h-5 flex items-center justify-center font-sans"
               aria-hidden="true"
             >
               <span class="faq-plus">+</span>
               <span class="faq-minus hidden">×</span>
             </span>
           </summary>
-          <div class="faq-content pb-6">
-            <p class="text-[15px] font-light text-[var(--color-ink)] leading-relaxed pr-8">
+          <div class="faq-content pb-5">
+            <p class="font-body text-[16px] text-[var(--color-ink)] leading-relaxed pr-6">
               {item.a}
             </p>
           </div>
@@ -91,7 +91,7 @@ const faqItems = [
   .faq-content {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 300ms ease;
+    transition: max-height 200ms ease;
   }
   .faq-item[open] .faq-content {
     /* max-height set by script for smooth animation */

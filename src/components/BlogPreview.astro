@@ -32,7 +32,7 @@ const cards = [
   <div class="max-w-[1200px] mx-auto">
     <header class="text-center mb-12 md:mb-16" data-animate>
       <div class="w-12 h-px bg-[var(--color-gold)] mx-auto mb-4"></div>
-      <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2">
+      <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2 font-sans">
         From the Desk
       </p>
       <h2
@@ -43,15 +43,14 @@ const cards = [
       </h2>
     </header>
 
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
       {cards.map((card, i) => (
         <a
           href={card.href}
-          class="block bg-[var(--color-surface)] border border-[var(--color-border)] hover:border-[var(--color-gold)] transition-colors duration-200 no-underline group"
+          class="block no-underline group border-b border-[var(--color-border)] pb-8"
           data-animate
-          style={`transition-delay: ${i * 100}ms`}
         >
-          <div class="aspect-video overflow-hidden">
+          <div class="aspect-video overflow-hidden mb-5">
             <img
               src={card.image}
               alt=""
@@ -61,20 +60,18 @@ const cards = [
               loading="lazy"
             />
           </div>
-          <div class="p-7">
-            <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2">
-              {card.category}
-            </p>
-            <h3 class="font-heading font-medium text-[24px] text-[var(--color-accent)] mb-2 group-hover:text-[var(--color-gold)] transition-colors">
-              {card.title}
-            </h3>
-            <p class="text-xs text-[var(--color-ink-muted)] mb-3">
-              {card.date}
-            </p>
-            <span class="text-xs text-[var(--color-gold)] no-underline group-hover:underline">
-              Read More →
-            </span>
-          </div>
+          <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2 font-sans">
+            {card.category}
+          </p>
+          <h3 class="font-heading font-normal text-[22px] text-[var(--color-accent)] mb-2">
+            {card.title}
+          </h3>
+          <p class="text-[13px] text-[var(--color-ink-muted)] mb-3 font-body">
+            {card.date}
+          </p>
+          <span class="text-[13px] text-[var(--color-gold)] font-body group-hover:underline">
+            Read more
+          </span>
         </a>
       ))}
     </div>

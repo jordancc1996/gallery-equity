@@ -7,52 +7,32 @@ const heroImageUrl =
   <div
     class="flex-1 flex items-center bg-[var(--color-bg)] pl-6 pr-6 md:pl-20 pt-24 pb-12 md:pt-0 md:pb-0 md:pr-12"
   >
-    <div class="max-w-[480px] w-full">
-      <p
-        class="hero-fade text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-4"
-        style="transition-delay: 0ms"
-        data-hero-item
-      >
+    <div class="max-w-[520px] w-full">
+      <p class="text-[11px] font-medium uppercase tracking-[0.14em] text-[var(--color-gold)] mb-5 font-sans">
         Art Finance — Private Access
       </p>
-      <h1
-        class="hero-fade font-heading font-light text-[42px] md:text-[72px] leading-[1.1] tracking-[-0.02em] text-[var(--color-accent)] mb-6"
-        style="transition-delay: 150ms"
-        data-hero-item
-      >
+      <h1 class="font-heading font-normal text-[38px] md:text-[64px] leading-[1.15] tracking-[-0.01em] text-[var(--color-accent)] mb-6">
         Your Collection. Unlocked.
       </h1>
-      <p
-        class="hero-fade text-lg font-light text-[var(--color-ink)] mb-8 max-w-[480px]"
-        style="transition-delay: 300ms"
-        data-hero-item
-      >
+      <p class="font-body text-[17px] text-[var(--color-ink)] mb-10 max-w-[480px] leading-relaxed">
         Gallery Equity provides discreet, flexible equity solutions for
         high-value art collections — without requiring a sale.
       </p>
-      <div
-        class="hero-fade flex flex-col sm:flex-row gap-4 mb-8"
-        style="transition-delay: 450ms"
-        data-hero-item
-      >
+      <div class="flex flex-col sm:flex-row gap-6 mb-10">
         <a
           href="#contact"
-          class="inline-block text-center py-4 px-10 text-white text-[13px] uppercase tracking-[0.1em] font-medium no-underline bg-[var(--color-gold)] hover:bg-[var(--color-gold-hover)] transition-colors duration-200"
+          class="inline-block text-center py-3.5 px-8 text-white text-[12px] uppercase tracking-[0.12em] font-medium no-underline bg-[var(--color-gold)] hover:bg-[var(--color-gold-hover)] font-sans border border-[var(--color-gold)]"
         >
           Request Access
         </a>
         <a
           href="#how-it-works"
-          class="inline-block text-center py-4 px-10 text-[13px] uppercase tracking-[0.1em] font-medium no-underline border border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white transition-colors duration-200"
+          class="inline-block text-center py-3.5 px-8 text-[12px] uppercase tracking-[0.12em] font-medium no-underline border border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white font-sans"
         >
           How It Works
         </a>
       </div>
-      <p
-        class="hero-fade text-xs text-[var(--color-ink-muted)]"
-        style="transition-delay: 600ms"
-        data-hero-item
-      >
+      <p class="text-[13px] text-[var(--color-ink-muted)] font-body">
         Serving collectors with portfolios from $1M+
       </p>
     </div>
@@ -69,25 +49,3 @@ const heroImageUrl =
     />
   </div>
 </section>
-
-<style>
-  .hero-fade {
-    opacity: 0;
-    transform: translateY(24px);
-    transition: opacity 700ms ease-out, transform 700ms ease-out;
-  }
-  .hero-fade.animate-in {
-    opacity: 1;
-    transform: translateY(0);
-  }
-</style>
-
-<script>
-  requestAnimationFrame(() => {
-    requestAnimationFrame(() => {
-      document.querySelectorAll("[data-hero-item]").forEach((el) => {
-        el.classList.add("animate-in");
-      });
-    });
-  });
-</script>

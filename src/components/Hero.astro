@@ -1,0 +1,93 @@
+---
+const heroImageUrl =
+  "https://images.unsplash.com/photo-1541961017774-22349e4a1262?w=1200&q=85";
+---
+
+<section class="min-h-screen flex flex-col md:flex-row" aria-label="Hero">
+  <div
+    class="flex-1 flex items-center bg-[var(--color-bg)] pl-6 pr-6 md:pl-20 pt-24 pb-12 md:pt-0 md:pb-0 md:pr-12"
+  >
+    <div class="max-w-[480px] w-full">
+      <p
+        class="hero-fade text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-4"
+        style="transition-delay: 0ms"
+        data-hero-item
+      >
+        Art Finance — Private Access
+      </p>
+      <h1
+        class="hero-fade font-heading font-light text-[42px] md:text-[72px] leading-[1.1] tracking-[-0.02em] text-[var(--color-accent)] mb-6"
+        style="transition-delay: 150ms"
+        data-hero-item
+      >
+        Your Collection. Unlocked.
+      </h1>
+      <p
+        class="hero-fade text-lg font-light text-[var(--color-ink)] mb-8 max-w-[480px]"
+        style="transition-delay: 300ms"
+        data-hero-item
+      >
+        Gallery Equity provides discreet, flexible equity solutions for
+        high-value art collections — without requiring a sale.
+      </p>
+      <div
+        class="hero-fade flex flex-col sm:flex-row gap-4 mb-8"
+        style="transition-delay: 450ms"
+        data-hero-item
+      >
+        <a
+          href="#contact"
+          class="inline-block text-center py-4 px-10 text-white text-[13px] uppercase tracking-[0.1em] font-medium no-underline bg-[var(--color-gold)] hover:bg-[var(--color-gold-hover)] transition-colors duration-200"
+        >
+          Request Access
+        </a>
+        <a
+          href="#how-it-works"
+          class="inline-block text-center py-4 px-10 text-[13px] uppercase tracking-[0.1em] font-medium no-underline border border-[var(--color-accent)] text-[var(--color-accent)] hover:bg-[var(--color-accent)] hover:text-white transition-colors duration-200"
+        >
+          How It Works
+        </a>
+      </div>
+      <p
+        class="hero-fade text-xs text-[var(--color-ink-muted)]"
+        style="transition-delay: 600ms"
+        data-hero-item
+      >
+        Serving collectors with portfolios from $1M+
+      </p>
+    </div>
+  </div>
+  <div class="w-full md:w-1/2 h-[60vw] md:h-screen flex-shrink-0">
+    <img
+      src={heroImageUrl}
+      alt="Gallery interior"
+      width={1200}
+      height={800}
+      class="w-full h-full object-cover"
+      loading="eager"
+      fetchpriority="high"
+    />
+  </div>
+</section>
+
+<style>
+  .hero-fade {
+    opacity: 0;
+    transform: translateY(24px);
+    transition: opacity 700ms ease-out, transform 700ms ease-out;
+  }
+  .hero-fade.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+
+<script>
+  requestAnimationFrame(() => {
+    requestAnimationFrame(() => {
+      document.querySelectorAll("[data-hero-item]").forEach((el) => {
+        el.classList.add("animate-in");
+      });
+    });
+  });
+</script>

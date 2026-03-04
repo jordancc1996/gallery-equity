@@ -1,0 +1,136 @@
+---
+const navLinks = [
+  { href: '#about', label: 'About' },
+  { href: '#how-it-works', label: 'How It Works' },
+  { href: '#insights', label: 'Insights' },
+  { href: '#faq', label: 'FAQ' },
+];
+---
+
+<nav
+  id="main-nav"
+  class="fixed top-0 left-0 right-0 z-50 h-[72px] md:h-[72px] flex items-center justify-between px-6 md:px-8 transition-[background-color] duration-300 ease-out [will-change:background-color]"
+  aria-label="Main navigation"
+>
+  <a
+    href="#"
+    class="font-heading font-normal text-[22px] text-[var(--color-accent)] no-underline"
+  >
+    Gallery Equity
+  </a>
+
+  <ul class="hidden md:flex items-center gap-8 list-none m-0 p-0">
+    {navLinks.map((link) => (
+      <li>
+        <a
+          href={link.href}
+          class="text-xs uppercase tracking-[0.08em] font-medium text-[var(--color-ink-muted)] no-underline hover:text-[var(--color-accent)] transition-colors"
+        >
+          {link.label}
+        </a>
+      </li>
+    ))}
+  </ul>
+
+  <div class="flex items-center gap-4">
+    <a
+      href="#contact"
+      class="hidden md:inline-block py-2.5 px-6 text-white text-[13px] uppercase tracking-[0.1em] font-medium no-underline bg-[var(--color-gold)] hover:bg-[var(--color-gold-hover)] transition-colors duration-200"
+    >
+      Request Access
+    </a>
+    <button
+      type="button"
+      id="nav-toggle"
+      class="md:hidden w-5 h-5 flex flex-col justify-center gap-1.5 p-0 border-0 bg-transparent cursor-pointer text-[var(--color-accent)]"
+      aria-label="Open menu"
+      aria-expanded="false"
+    >
+      <span class="block w-5 h-px bg-current" aria-hidden="true"></span>
+      <span class="block w-5 h-px bg-current" aria-hidden="true"></span>
+      <span class="block w-5 h-px bg-current" aria-hidden="true"></span>
+    </button>
+  </div>
+</nav>
+
+<!-- Mobile overlay menu -->
+<div
+  id="nav-overlay"
+  class="fixed inset-0 z-40 bg-[var(--color-accent)] opacity-0 pointer-events-none transition-opacity duration-300 flex items-center justify-center"
+  aria-hidden="true"
+>
+  <ul class="flex flex-col items-center gap-8 list-none m-0 p-0">
+    {navLinks.map((link) => (
+      <li>
+        <a
+          href={link.href}
+          class="nav-overlay-link font-heading text-4xl text-white no-underline"
+          data-close-overlay
+        >
+          {link.label}
+        </a>
+      </li>
+    ))}
+    <li>
+      <a
+        href="#contact"
+        class="nav-overlay-link font-heading text-4xl text-white no-underline"
+        data-close-overlay
+      >
+        Request Access
+      </a>
+    </li>
+  </ul>
+</div>
+
+<style>
+  nav.scrolled {
+    background-color: var(--color-white);
+    border-bottom: 1px solid var(--color-border);
+  }
+  #nav-overlay.is-open {
+    opacity: 1;
+    pointer-events: auto;
+  }
+</style>
+
+<script>
+  const nav = document.getElementById('main-nav');
+  const toggle = document.getElementById('nav-toggle');
+  const overlay = document.getElementById('nav-overlay');
+
+  if (nav) {
+    window.addEventListener('scroll', () => {
+      nav.classList.toggle('scrolled', window.scrollY > 80);
+    });
+  }
+
+  function openMenu() {
+    if (overlay && toggle) {
+      overlay.classList.add('is-open');
+      overlay.setAttribute('aria-hidden', 'false');
+      toggle.setAttribute('aria-label', 'Close menu');
+      toggle.setAttribute('aria-expanded', 'true');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  function closeMenu() {
+    if (overlay && toggle) {
+      overlay.classList.remove('is-open');
+      overlay.setAttribute('aria-hidden', 'true');
+      toggle.setAttribute('aria-label', 'Open menu');
+      toggle.setAttribute('aria-expanded', 'false');
+      document.body.style.overflow = '';
+    }
+  }
+
+  toggle?.addEventListener('click', () => {
+    if (overlay?.classList.contains('is-open')) closeMenu();
+    else openMenu();
+  });
+
+  document.querySelectorAll('[data-close-overlay]').forEach((el) => {
+    el.addEventListener('click', closeMenu);
+  });
+</script>

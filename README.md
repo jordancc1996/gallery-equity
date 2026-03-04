@@ -1,43 +1,38 @@
-# Astro Starter Kit: Minimal
+# Gallery Equity
 
-```sh
-npm create astro@latest -- --template minimal
-```
+Lead-capture landing page for Gallery Equity — art finance and equity solutions for high-net-worth collectors.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+## Stack
 
-## 🚀 Project Structure
+- **Astro** (static)
+- **Tailwind CSS v4**
+- **Netlify** (hosting + forms)
 
-Inside of your Astro project, you'll see the following folders and files:
+## Commands
 
-```text
-/
-├── public/
-├── src/
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+| Command        | Action                                      |
+|----------------|---------------------------------------------|
+| `npm run dev`  | Start dev server at `localhost:4321`        |
+| `npm run build`| Build for production (output in `dist/`)    |
+| `npm run preview` | Preview production build locally       |
 
-Astro looks for `.astro` or `.md` files in the `src/pages/` directory. Each page is exposed as a route based on its file name.
+## Deploy (Netlify)
 
-There's nothing special about `src/components/`, but that's where we like to put any Astro/React/Vue/Svelte/Preact components.
+Connect the repo to Netlify; the adapter is already configured. Ensure the form is present in the built HTML (it is by default).
 
-Any static assets, like images, can be placed in the `public/` directory.
+## OG image
 
-## 🧞 Commands
+Add a 1200×630 image at `public/og-image.jpg` for social previews (dark background, “Gallery Equity” in white recommended). The layout already references it in meta tags.
 
-All commands are run from the root of the project, from a terminal:
+## Placeholder copy
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+Replace any `[USER WILL PROVIDE]` or placeholder headlines/copy in:
 
-## 👀 Want to learn more?
+- `src/components/Hero.astro`
+- `src/components/FAQ.astro` (subtext under “Everything You Need to Know”)
+- `src/components/ContactCTA.astro`
+- `src/components/BlogPreview.astro` (titles, dates, links when you have real posts)
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+## Form
+
+The contact form uses Netlify Forms. Form name: `gallery-equity-inquiry`. Submissions appear in the Netlify dashboard.

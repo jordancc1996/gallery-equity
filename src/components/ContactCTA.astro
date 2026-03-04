@@ -1,0 +1,168 @@
+---
+const collectionValueOptions = [
+  "$1M – $5M",
+  "$5M – $25M",
+  "$25M – $100M",
+  "$100M+",
+  "Prefer not to say",
+];
+---
+
+<section
+  id="contact"
+  class="py-[72px] md:py-[120px] px-6 md:px-8 bg-[var(--color-accent)]"
+  aria-labelledby="contact-heading"
+  data-animate
+>
+  <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-12 md:gap-16 items-start">
+    <div class="flex-1 max-w-[420px]">
+      <p class="text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-4">
+        Private Inquiry
+      </p>
+      <h2
+        id="contact-heading"
+        class="font-heading font-normal text-[40px] md:text-[52px] text-white leading-tight mb-6"
+      >
+        Begin a Confidential Conversation
+      </h2>
+      <p class="text-base font-light text-white/70 mb-8">
+        Gallery Equity works with a select group of collectors and institutions. Submit your details and a member of our team will be in touch within 48 hours.
+      </p>
+      <ul class="space-y-2 list-none m-0 p-0 text-[13px] font-normal text-white/50">
+        <li>— No obligation inquiry</li>
+        <li>— Fully confidential</li>
+        <li>— Response within 48 hours</li>
+      </ul>
+    </div>
+
+    <div class="w-full md:max-w-[440px] flex-shrink-0">
+      <div id="contact-form-wrapper" class="bg-white p-8 md:p-12">
+        <form
+          name="gallery-equity-inquiry"
+          method="POST"
+          action="/"
+          data-netlify="true"
+          netlify-honeypot="bot-field"
+          id="inquiry-form"
+          class="flex flex-col gap-5"
+        >
+          <input type="hidden" name="form-name" value="gallery-equity-inquiry" />
+          <p class="hidden" aria-hidden="true">
+            <label>Don’t fill this out: <input name="bot-field" /></label>
+          </p>
+
+          <div>
+            <label for="name" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2">
+              Full Name
+            </label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              required
+              placeholder="Your full name"
+              class="w-full py-3.5 px-4 text-[15px] font-light border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-gold)] transition-colors"
+            />
+          </div>
+          <div>
+            <label for="email" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2">
+              Email Address
+            </label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              required
+              placeholder="your@email.com"
+              class="w-full py-3.5 px-4 text-[15px] font-light border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-gold)] transition-colors"
+            />
+          </div>
+          <div>
+            <label for="phone" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2">
+              Phone (Optional)
+            </label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+1 (000) 000-0000"
+              class="w-full py-3.5 px-4 text-[15px] font-light border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-gold)] transition-colors"
+            />
+          </div>
+          <div>
+            <label for="collection-value" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2">
+              Estimated Collection Value
+            </label>
+            <select
+              id="collection-value"
+              name="collection-value"
+              class="w-full py-3.5 px-4 text-[15px] font-light border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-gold)] transition-colors"
+            >
+              <option value="">Select range</option>
+              {collectionValueOptions.map((opt) => (
+                <option value={opt}>{opt}</option>
+              ))}
+            </select>
+          </div>
+          <div>
+            <label for="message" class="block text-[11px] font-medium uppercase tracking-[0.12em] text-[var(--color-gold)] mb-2">
+              Message / How can we help?
+            </label>
+            <textarea
+              id="message"
+              name="message"
+              rows={4}
+              placeholder="Tell us about your collection and what you're looking to achieve"
+              class="w-full py-3.5 px-4 text-[15px] font-light border border-[var(--color-border)] bg-white focus:outline-none focus:border-[var(--color-gold)] transition-colors resize-y min-h-[100px]"
+            ></textarea>
+          </div>
+          <button
+            type="submit"
+            class="w-full py-4 px-10 text-white text-[13px] uppercase tracking-[0.1em] font-medium bg-[var(--color-gold)] hover:bg-[var(--color-gold-hover)] transition-colors duration-200 border-0 cursor-pointer"
+          >
+            Submit Inquiry
+          </button>
+          <p class="text-[11px] text-[var(--color-ink-muted)] text-center">
+            Your information is kept strictly confidential and will never be shared with third parties.
+          </p>
+        </form>
+        <div
+          id="contact-success"
+          class="hidden text-center py-12"
+          aria-live="polite"
+        >
+          <p class="font-heading text-[28px] text-[var(--color-accent)]">
+            Thank you. A member of our team will be in touch within 48 hours.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const form = document.getElementById("inquiry-form");
+  const successEl = document.getElementById("contact-success");
+
+  if (form) {
+    form.addEventListener("submit", async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      try {
+        const response = await fetch("/", {
+          method: "POST",
+          headers: { "Content-Type": "application/x-www-form-urlencoded" },
+          body: new URLSearchParams(formData).toString(),
+        });
+        if (response.ok && successEl) {
+          form.classList.add("hidden");
+          successEl.classList.remove("hidden");
+        } else {
+          window.location.href = form.action || "/";
+        }
+      } catch {
+        window.location.href = form.action || "/";
+      }
+    });
+  }
+</script>

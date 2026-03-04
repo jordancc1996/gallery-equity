@@ -1,0 +1,65 @@
+@import "tailwindcss";
+
+/* Gallery Equity design tokens */
+@theme {
+  --color-bg: #fafaf8;
+  --color-surface: #f3f2ee;
+  --color-ink: #1a1916;
+  --color-ink-muted: #6b6860;
+  --color-accent: #2c2c27;
+  --color-gold: #b89b6e;
+  --color-gold-hover: #a08555;
+  --color-border: #e2e0db;
+  --color-white: #ffffff;
+
+  --font-heading: "Cormorant Garamond", serif;
+  --font-body: "Inter", sans-serif;
+}
+
+/* Base resets and typography */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 1.7;
+    color: var(--color-ink);
+    background-color: var(--color-bg);
+  }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading);
+  color: var(--color-accent);
+}
+
+.font-heading {
+  font-family: var(--font-heading);
+}
+}
+
+/* Animation utilities for scroll-triggered fade-in */
+[data-animate] {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 600ms ease, transform 600ms ease;
+}
+
+[data-animate].animate-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* FAQ accordion content transition */
+.faq-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease;
+}
+
+.faq-content.is-open {
+  max-height: var(--faq-max-height, 500px);
+}
